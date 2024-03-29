@@ -4,10 +4,13 @@ import '../../App.css';
 
 export const ArraysTIL = () => {
   const chunk = (inputArray: Array<any>, chunkSize: number) => {
-    if (inputArray.length < chunkSize)
-      return alert('나누는 값이 배열의 길이보다 큽니다.');
+    if (!chunkSize) {
+      return [];
+    } else if (chunkSize > inputArray.length) {
+      return alert('나누는 크기가 배열의 길이보다 큽니다.');
+    }
 
-    let array;
+    let array: Array<any> = [];
     const arrayCount = Math.floor(inputArray.length / chunkSize);
 
     for (let i = 0; i < arrayCount; i++) {
@@ -24,7 +27,7 @@ export const ArraysTIL = () => {
     return otherArrayLength > 0 ? [...array, otherArray] : array;
   };
 
-  console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 3));
+  console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 1));
 
   return (
     <div className="App">
