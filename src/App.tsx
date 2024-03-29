@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ThisLab } from './repos';
+import { ThisLab, ArraysTIL } from './repos';
 
 const App = () => {
   return (
@@ -8,6 +8,7 @@ const App = () => {
       <Routes>
         <Route path="/">
           <Route path="this" element={<ThisLab />} />
+          <Route path="arrays" element={<ArraysTIL />} />
         </Route>
       </Routes>
     </Router>
